@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bright Smile Dental Care | Belapur CBD</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+        --blue: #0077ff;
+        --mint: #00c896;
+        --navy: #102542;
+        --white: #ffffff;
+        --light: #f6fbff;
+        --text: #555;
+      }
+
+      body {
+        background: var(--white);
+        color: var(--navy);
+        overflow-x: hidden;
+      }
+
+      /* Floating animation */
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      /* Fade animation */
+
+      .fade {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 1s ease;
+      }
+
+      .fade.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Navbar */
+
+      nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 18px 8%;
+        background: rgba(255, 255, 255, 0.9);
+
+        backdrop-filter: blur(15px);
+
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .logo {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--blue);
+      }
+
+      .nav-btn {
+        background: linear-gradient(135deg, var(--blue), var(--mint));
+
+        color: white;
+        padding: 12px 24px;
+
+        text-decoration: none;
+        border-radius: 40px;
+        font-weight: 600;
+
+        transition: 0.3s;
+      }
+
+      .nav-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 119, 255, 0.4);
+      }
+
+      /* Hero */
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 120px 8% 70px;
+        gap: 50px;
+
+        background: linear-gradient(135deg, #f5fbff, #ffffff);
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero-text h1 {
+        font-size: 3.8rem;
+        line-height: 1.1;
+      }
+
+      .hero-text span {
+        color: var(--blue);
+      }
+
+      .hero-text p {
+        margin: 25px 0;
+
+        color: var(--text);
+
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 15px 30px;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .primary {
+        background: var(--blue);
+        color: white;
+      }
+
+      .secondary {
+        border: 2px solid var(--blue);
+        color: var(--blue);
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Hero image */
+
+      .hero-image {
+        flex: 1;
+
+        display: flex;
+        justify-content: center;
+      }
+
+      .dental-card {
+        width: 420px;
+        height: 420px;
+
+        background: linear-gradient(135deg, var(--blue), var(--mint));
+
+        border-radius: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 9rem;
+
+        color: white;
+
+        animation: float 4s infinite;
+
+        box-shadow: 0 30px 60px rgba(0, 119, 255, 0.35);
+      }
+
+      /* Section common */
+
+      section {
+        padding: 90px 8%;
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .title h2 {
+        font-size: 2.5rem;
+      }
+
+      .title p {
+        color: var(--text);
+        margin-top: 10px;
+      }
+
+      /* ==============================
+   Doctor Introduction Section
+============================== */
+
+      .doctor-container {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .doctor-image {
+        height: 420px;
+        background: linear-gradient(135deg, var(--blue), var(--mint));
+
+        border-radius: 35px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 8rem;
+        color: white;
+
+        box-shadow: 0 25px 50px rgba(0, 119, 255, 0.25);
+      }
+
+      .doctor-content {
+        background: white;
+        padding: 45px;
+        border-radius: 30px;
+
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+      }
+
+      .doctor-content h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      .doctor-content h4 {
+        color: var(--mint);
+        margin-bottom: 20px;
+      }
+
+      .doctor-content p {
+        color: var(--text);
+        line-height: 1.8;
+        margin-bottom: 25px;
+      }
+
+      .doctor-info {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+
+      .info-box {
+        background: var(--light);
+        padding: 15px 20px;
+        border-radius: 15px;
+        font-weight: 600;
+        color: var(--navy);
+      }
+
+      /* ==============================
+   Treatments Section
+============================== */
+
+      .treatment-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 25px;
+      }
+
+      .treatment-card {
+        background: white;
+
+        padding: 35px 30px;
+
+        border-radius: 25px;
+
+        text-align: center;
+
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+
+        transition: 0.4s;
+      }
+
+      .treatment-card:hover {
+        transform: translateY(-12px);
+
+        box-shadow: 0 25px 50px rgba(0, 119, 255, 0.18);
+      }
+
+      .treatment-icon {
+        width: 75px;
+        height: 75px;
+
+        margin: auto auto 20px;
+
+        border-radius: 50%;
+
+        background: linear-gradient(135deg, var(--blue), var(--mint));
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 2rem;
+        color: white;
+      }
+
+      .treatment-card h3 {
+        margin-bottom: 12px;
+      }
+
+      .treatment-card p {
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* ==============================
+   Before After Gallery
+============================== */
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 25px;
+      }
+
+      .smile-card {
+        overflow: hidden;
+
+        border-radius: 25px;
+
+        height: 300px;
+
+        position: relative;
+
+        cursor: pointer;
+
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .smile-card .before,
+      .smile-card .after {
+        height: 50%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .before {
+        background: var(--navy);
+      }
+
+      .after {
+        background: linear-gradient(135deg, var(--blue), var(--mint));
+      }
+
+      .smile-card:hover {
+        transform: scale(1.04);
+
+        transition: 0.4s;
+      }
+
+      /* ==============================
+   Why Choose Us
+============================== */
+
+      .why-container {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 30px;
+      }
+
+      .why-card {
+        background: linear-gradient(145deg, white, #f5fbff);
+
+        padding: 40px 30px;
+
+        text-align: center;
+
+        border-radius: 30px;
+
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+
+        transition: 0.4s;
+      }
+
+      .why-card:hover {
+        transform: translateY(-10px);
+
+        box-shadow: 0 25px 50px rgba(0, 200, 150, 0.25);
+      }
+
+      .why-icon {
+        font-size: 3rem;
+
+        margin-bottom: 20px;
+      }
+
+      .why-card h3 {
+        margin-bottom: 15px;
+      }
+
+      .why-card p {
+        color: var(--text);
+
+        line-height: 1.7;
+      }
+      /* ==============================
+   Patient Testimonials
+============================== */
+
+      .testimonial-section {
+        background: var(--light);
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .testimonial-card {
+        background: white;
+        padding: 35px 30px;
+        border-radius: 30px;
+
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+
+        transition: 0.4s;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 45px rgba(0, 119, 255, 0.18);
+      }
+
+      .stars {
+        color: #ffb400;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+      }
+
+      .testimonial-card p {
+        color: var(--text);
+        line-height: 1.8;
+      }
+
+      .patient {
+        margin-top: 20px;
+        font-weight: 700;
+        color: var(--navy);
+      }
+
+      /* ==============================
+   Appointment CTA
+============================== */
+
+      .appointment {
+        background: linear-gradient(135deg, var(--blue), var(--mint));
+
+        color: white;
+
+        text-align: center;
+
+        border-radius: 40px;
+
+        margin: 60px 8%;
+      }
+
+      .appointment h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .appointment p {
+        max-width: 700px;
+        margin: auto auto 35px;
+        line-height: 1.8;
+      }
+
+      .whatsapp-btn {
+        display: inline-block;
+
+        background: white;
+        color: var(--blue);
+
+        text-decoration: none;
+
+        padding: 16px 35px;
+
+        border-radius: 50px;
+
+        font-weight: 700;
+
+        transition: 0.3s;
+      }
+
+      .whatsapp-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      }
+
+      /* ==============================
+   Location & Timings
+============================== */
+
+      .location-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .location-card,
+      .map-card {
+        background: white;
+
+        padding: 35px;
+
+        border-radius: 30px;
+
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .location-card h3,
+      .map-card h3 {
+        margin-bottom: 20px;
+      }
+
+      .location-card p {
+        margin: 15px 0;
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      .map-placeholder {
+        height: 260px;
+
+        border-radius: 20px;
+
+        background: linear-gradient(135deg, var(--blue), var(--mint));
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: white;
+
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      /* ==============================
+   Footer
+============================== */
+
+      footer {
+        background: var(--navy);
+
+        color: white;
+
+        padding: 60px 8% 30px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .footer-column h3 {
+        margin-bottom: 20px;
+        color: var(--mint);
+      }
+
+      .footer-column p,
+      .footer-column a {
+        color: #ddd;
+        text-decoration: none;
+        line-height: 2;
+      }
+
+      .footer-column a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 25px;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* ==============================
+   Mobile Responsive Design
+============================== */
+
+      @media (max-width: 900px) {
+        .hero,
+        .doctor-container,
+        .location-container {
+          grid-template-columns: 1fr;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-text h1 {
+          font-size: 2.8rem;
+        }
+
+        .treatment-grid,
+        .gallery-grid,
+        .why-container,
+        .testimonial-grid,
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .dental-card {
+          width: 320px;
+          height: 320px;
+          font-size: 7rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        nav {
+          padding: 15px 5%;
+        }
+
+        .logo {
+          font-size: 1.1rem;
+        }
+
+        .nav-btn {
+          padding: 10px 18px;
+          font-size: 0.8rem;
+        }
+
+        section {
+          padding: 70px 5%;
+        }
+
+        .hero {
+          padding: 110px 5% 50px;
+        }
+
+        .hero-text h1 {
+          font-size: 2.1rem;
+        }
+
+        .hero-buttons {
+          justify-content: center;
+        }
+
+        .doctor-content {
+          padding: 30px 20px;
+        }
+
+        .doctor-image {
+          height: 300px;
+          font-size: 6rem;
+        }
+
+        .treatment-grid,
+        .gallery-grid,
+        .why-container,
+        .testimonial-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .appointment {
+          margin: 40px 5%;
+          border-radius: 25px;
+        }
+
+        .appointment h2 {
+          font-size: 1.8rem;
+        }
+
+        .location-card,
+        .map-card {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ======================
+            NAVBAR
+    ======================= -->
+    
+    <nav>
+    
+        <div class="logo">
+            🦷 Bright Smile Dental Care
+        </div>
+    
+        <a href="#appointment" class="nav-btn">
+            Book Consultation
+        </a>
+    
+    </nav>
+    
+    
+    <!-- ======================
+            HERO SECTION
+    ======================= -->
+    
+    <section class="hero">
+    
+        <div class="hero-text fade">
+    
+            <h1>
+                Your Perfect 
+                <span>Smile</span>
+                Starts Here
+            </h1>
+    
+            <p>
+                Experience world-class dental care with advanced technology,
+                gentle treatment, and compassionate professionals in the heart
+                of Belapur CBD.
+            </p>
+    
+    
+            <div class="hero-buttons">
+    
+                <a href="#treatments" class="btn primary">
+                    Explore Treatments
+                </a>
+    
+    
+                <a href="#doctor" class="btn secondary">
+                    Meet Your Dentist
+                </a>
+    
+            </div>
+    
+        </div>
+    
+    
+        <div class="hero-image fade">
+    
+            <div class="dental-card">
+                😁
+            </div>
+    
+        </div>
+    
+    </section>
+    
+    
+    
+    <!-- ======================
+           DOCTOR SECTION
+    ======================= -->
+    
+    <section id="doctor">
+    
+        <div class="title fade">
+    
+            <h2>Meet Your Dentist</h2>
+    
+            <p>
+                Dedicated to delivering healthy and confident smiles.
+            </p>
+    
+        </div>
+    
+    
+        <div class="doctor-container fade">
+    
+            <div class="doctor-image">
+                👩‍⚕️
+            </div>
+    
+    
+            <div class="doctor-content">
+    
+                <h3>
+                    Dr. Priya Sharma
+                </h3>
+    
+                <h4>
+                    BDS, MDS • Cosmetic & Family Dentist
+                </h4>
+    
+    
+                <p>
+                    With over 12 years of experience,
+                    Dr. Priya Sharma has helped thousands
+                    of patients achieve brighter, healthier
+                    smiles through modern and painless
+                    dental procedures.
+                </p>
+    
+    
+                <div class="doctor-info">
+    
+                    <div class="info-box">
+                        ⭐ 12+ Years Experience
+                    </div>
+    
+    
+                    <div class="info-box">
+                        👨‍👩‍👧 5000+ Happy Patients
+                    </div>
+    
+    
+                    <div class="info-box">
+                        🏆 Certified Specialist
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </section>
+    
+    
+    
+    <!-- ======================
+           TREATMENTS
+    ======================= -->
+    
+    <section id="treatments">
+    
+        <div class="title fade">
+    
+            <h2>
+                Our Dental Treatments
+            </h2>
+    
+            <p>
+                Complete oral care solutions for every age.
+            </p>
+    
+        </div>
+    
+    
+        <div class="treatment-grid">
+    
+    
+            <div class="treatment-card fade">
+    
+                <div class="treatment-icon">
+                    🪥
+                </div>
+    
+                <h3>Teeth Cleaning</h3>
+    
+                <p>
+                    Professional cleaning for healthier gums
+                    and a brighter smile.
+                </p>
+    
+            </div>
+    
+    
+    
+            <div class="treatment-card fade">
+    
+                <div class="treatment-icon">
+                    😁
+                </div>
+    
+                <h3>Braces</h3>
+    
+                <p>
+                    Correct alignment and improve confidence
+                    with modern orthodontic treatments.
+                </p>
+    
+            </div>
+    
+    
+    
+            <div class="treatment-card fade">
+    
+                <div class="treatment-icon">
+                    🦷
+                </div>
+    
+                <h3>Root Canal</h3>
+    
+                <p>
+                    Pain-free procedures using advanced
+                    equipment and technology.
+                </p>
+    
+            </div>
+    
+    
+    
+            <div class="treatment-card fade">
+    
+                <div class="treatment-icon">
+                    🔩
+                </div>
+    
+                <h3>Dental Implants</h3>
+    
+                <p>
+                    Permanent replacement solutions that
+                    look and feel like natural teeth.
+                </p>
+    
+            </div>
+    
+    
+    
+            <div class="treatment-card fade">
+    
+                <div class="treatment-icon">
+                    ✨
+                </div>
+    
+                <h3>Teeth Whitening</h3>
+    
+                <p>
+                    Enhance your smile with safe and
+                    professional whitening treatments.
+                </p>
+    
+            </div>
+    
+    
+    
+            <div class="treatment-card fade">
+    
+                <div class="treatment-icon">
+                    🧒
+                </div>
+    
+                <h3>Kids Dentistry</h3>
+    
+                <p>
+                    Friendly dental care specially designed
+                    to make children comfortable.
+                </p>
+    
+            </div>
+    
+    
+        </div>
+    
+    </section>
+    
+    
+    
+    <!-- ======================
+       BEFORE / AFTER GALLERY
+    ======================= -->
+    
+    <section>
+    
+        <div class="title fade">
+    
+            <h2>
+                Smile Transformations
+            </h2>
+    
+            <p>
+                Real stories of confidence and happiness.
+            </p>
+    
+        </div>
+    
+    
+        <div class="gallery-grid">
+    
+    
+            <div class="smile-card fade">
+    
+                <div class="before">
+                    Before
+                </div>
+    
+                <div class="after">
+                    After
+                </div>
+    
+            </div>
+    
+    
+            <div class="smile-card fade">
+    
+                <div class="before">
+                    Before
+                </div>
+    
+                <div class="after">
+                    After
+                </div>
+    
+            </div>
+    
+    
+            <div class="smile-card fade">
+    
+                <div class="before">
+                    Before
+                </div>
+    
+                <div class="after">
+                    After
+                </div>
+    
+            </div>
+    
+    
+        </div>
+    
+    </section>
+    
+    
+    
+    <!-- ======================
+          WHY CHOOSE US
+    ======================= -->
+    
+    <section>
+    
+        <div class="title fade">
+    
+            <h2>
+                Why Choose Bright Smile?
+            </h2>
+    
+            <p>
+                Advanced dental care with comfort and trust.
+            </p>
+    
+        </div>
+    
+    
+        <div class="why-container">
+        
+            <div class="why-card fade">
+                <div class="why-icon">👨‍⚕️</div>
+                <h3>Experienced Dentists</h3>
+                <p>
+                    Skilled specialists with years of
+                    successful dental practice.
+                </p>
+            </div>
+    
+    
+            <div class="why-card fade">
+                <div class="why-icon">🔬</div>
+                <h3>Modern Equipment</h3>
+                <p>
+                    Latest technology ensuring accurate
+                    diagnosis and better treatment.
+                </p>
+            </div>
+    
+    
+            <div class="why-card fade">
+                <div class="why-icon">😊</div>
+                <h3>Pain-Free Treatment</h3>
+                <p>
+                    Comfortable procedures focused on
+                    a stress-free patient experience.
+                </p>
+            </div>
+    
+        </div>
+    
+    </section>
+    <!-- ======================
+      TESTIMONIALS
+======================= -->
+
+<section class="testimonial-section">
+
+  <div class="title fade">
+
+      <h2>
+          Happy Patient Stories
+      </h2>
+
+      <p>
+          Trusted by hundreds of families for their dental health.
+      </p>
+
+  </div>
+
+
+  <div class="testimonial-grid">
+
+
+      <div class="testimonial-card fade">
+
+          <div class="stars">
+              ⭐⭐⭐⭐⭐
+          </div>
+
+          <p>
+              "The best dental experience I've ever had.
+              The treatment was completely painless and
+              the staff was extremely caring."
+          </p>
+
+          <div class="patient">
+              — Rahul Mehta
+          </div>
+
+      </div>
+
+
+
+      <div class="testimonial-card fade">
+
+          <div class="stars">
+              ⭐⭐⭐⭐⭐
+          </div>
+
+          <p>
+              "My teeth whitening results were amazing.
+              The clinic is modern, hygienic and highly professional."
+          </p>
+
+          <div class="patient">
+              — Sneha Patel
+          </div>
+
+      </div>
+
+
+
+      <div class="testimonial-card fade">
+
+          <div class="stars">
+              ⭐⭐⭐⭐⭐
+          </div>
+
+          <p>
+              "Dr. Priya explained every step of my root canal treatment.
+              I felt comfortable throughout the entire procedure."
+          </p>
+
+          <div class="patient">
+              — Amit Sharma
+          </div>
+
+      </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================
+    APPOINTMENT CTA
+======================= -->
+
+<section id="appointment" class="appointment fade">
+
+  <h2>
+      Book Your Dental Consultation Today
+  </h2>
+
+  <p>
+      Chat with our clinic team directly on WhatsApp and schedule
+      your appointment in just a few clicks.
+  </p>
+
+
+  <a 
+     href="https://wa.me/919999999999?text=Hello%20Bright%20Smile%20Dental%20Care,%20I%20would%20like%20to%20book%20a%20dental%20consultation."
+     class="whatsapp-btn"
+     target="_blank">
+
+      💬 Book on WhatsApp
+
+  </a>
+
+</section>
+
+
+
+<!-- ======================
+   LOCATION & TIMINGS
+======================= -->
+
+<section>
+
+  <div class="title fade">
+
+      <h2>
+          Visit Our Clinic
+      </h2>
+
+      <p>
+          Conveniently located in Belapur CBD with easy access.
+      </p>
+
+  </div>
+
+
+  <div class="location-container">
+
+
+      <div class="location-card fade">
+
+          <h3>
+              📍 Clinic Details
+          </h3>
+
+
+          <p>
+              <strong>Address:</strong><br>
+              Bright Smile Dental Care,<br>
+              Sector 11, Belapur CBD,<br>
+              Navi Mumbai, Maharashtra
+          </p>
+
+
+          <p>
+              <strong>Timings:</strong><br>
+              Monday – Saturday<br>
+              9:00 AM – 8:00 PM
+          </p>
+
+
+          <p>
+              <strong>Emergency Contact:</strong><br>
+              +91 98765 43210
+          </p>
+
+      </div>
+
+
+
+      <div class="map-card fade">
+
+          <h3>
+              🗺️ Find Us
+          </h3>
+
+
+          <div class="map-placeholder">
+
+              Google Map Location
+
+          </div>
+
+
+      </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================
+      FOOTER
+======================= -->
+
+<footer>
+
+  <div class="footer-grid">
+
+
+      <div class="footer-column">
+
+          <h3>
+              Bright Smile Dental Care
+          </h3>
+
+
+          <p>
+              Creating healthy and confident smiles through
+              advanced dental care and compassionate treatment.
+          </p>
+
+      </div>
+
+
+
+      <div class="footer-column">
+
+          <h3>
+              Quick Links
+          </h3>
+
+
+          <a href="#doctor">Our Dentist</a><br>
+
+          <a href="#treatments">
+              Treatments
+          </a><br>
+
+          <a href="#appointment">
+              Book Appointment
+          </a>
+
+      </div>
+
+
+
+      <div class="footer-column">
+
+          <h3>
+              Connect With Us
+          </h3>
+
+
+          <p>
+              📞 +91 98765 43210
+          </p>
+
+
+          <p>
+              📧 info@brightsmile.com
+          </p>
+
+
+          <p>
+              📷 Instagram: @brightsmile_dental
+          </p>
+
+
+          <p>
+              🏥 Registration No: MH/DC/000000
+          </p>
+
+
+      </div>
+
+
+  </div>
+
+
+
+  <div class="footer-bottom">
+
+      © 2026 Bright Smile Dental Care |
+      Designed with ❤️ for healthy smiles.
+
+  </div>
+
+</footer>
+
+
+
+
+<!-- ======================
+    PREMIUM JAVASCRIPT
+======================= -->
+
+<script>
+
+
+/* Scroll Reveal Animation */
+
+const fadeElements = document.querySelectorAll(".fade");
+
+
+const observer = new IntersectionObserver(
+(entries)=>{
+
+  entries.forEach(entry=>{
+
+      if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+      }
+
+  });
+
+},
+{
+  threshold:0.15
+}
+
+
+);
+
+
+fadeElements.forEach(element=>{
+
+  observer.observe(element);
+
+});
+
+
+
+
+
+/* Navbar shadow on scroll */
+
+const navbar = document.querySelector("nav");
+
+
+window.addEventListener("scroll",()=>{
+
+
+  if(window.scrollY > 50){
+
+      navbar.style.boxShadow =
+      "0 10px 30px rgba(0,0,0,0.12)";
+
+      navbar.style.padding =
+      "15px 8%";
+
+  }
+
+  else{
+
+
+      navbar.style.boxShadow =
+      "0 5px 20px rgba(0,0,0,0.08)";
+
+      navbar.style.padding =
+      "18px 8%";
+
+  }
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
+  </html>
